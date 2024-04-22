@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta name="keywords" name="termux,kalilinux,android,hacking,virtualbox,html">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="aprendiendo termux,aprendiendo kalilinux,hackinh,aprendiendo virtualbox">
+    <meta name="author" content="Aprendiendotermux">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>COMO INSTALAR KALILINUX</title>
+  <style>
+        body {
+            background-color: #111111;
+            color: white; /* Cambia el color del texto a blanco */
+        }
+    </style>
+  </head>
+  <body>
+ <h1>COMO INSTALAR KALI LINUX EN TERMUX:X11
+   (explicacion detallada)
+ </h1> 
+<p>Lo primero para poder instalar kali linux en termux:X11 primero debes tener instalado termux la version 1.118 la puedes descargar desde github o algun sitio de confianza aqui te dejo un enlace de youtube para enseñarte como instalar los apk desde github.
+<a href="https://youtu.be/Ag9yIWEMlf0?si=SIjUOAfcDIm_V_GO"><br>CLICK PARA VER EL VIDEO</a>
+<br>
+<br>
+ya instalado termux y termux:X11,abrimos la aplicacion de termux y ejecutamos el comamdo
+<br>
+<h3>termux-setup-storage</h3>
+este comando te pedira acceso a el almacenamiento interno le contestaremos con "Y" y dando a la tecla enter o simplemente aceptando el permiso en pantalla
+<img src="foto 1.png" alt="termux" style="max-width:100%; height:auto;">
+<img src="foto 1.1.png" alt="termux" style="max-width:100%; height:auto;">
+<h4>Ahora ejecutaremos el comando</h4>
+<h3>yes|apt update && yes|apt upgrade</h3>
+Este comando es para para actualizar los paquetes y evitar las preguntas que te hace durante la instalacion
+<img src="foto 2.png" alt="termux" style="max-width:100%; height:auto;">
+<br>
+<br>
+Despues de actualizar todos los paquetes ejecutaremos el siguiente comando
+<br>
+<br>
+<h3>pkg install wget -y</h3>
+Este comando al ejecutarlo instalara el paquete wget que lo necitaremos para clonar algunos repositorios
+<img src="foto 3.png" alt="termux" style="max-width:100%; height:auto;">
+<br>
+<br>
+Despues de instalar el paquete wget ejecutaremos el siguiente comando
+<br>
+<br>
+<h3>wget -O install-nethunter-termux https://offs.ec/2MceZWr</h3>
+El anterior comando no se ejecutara si no tienes instalado el paquete wget,este comando clonara los repocitorios de descarga de kali linux
+<img src="foto 4.png" alt="termux" style="max-width:100%; height:auto;">
+<br>
+<br>
+ya que se clonaran los paquetes de instalacion correctamente ahora vamos a ejecutar 
+<h3>ls</h3>
+este comando listara las carpetas o los archivos que tengamos en el HOME de termux ahora vamos a identificar el archivo de instalacion de kali linux
+<img src="foto 5.o.png" alt="termux" style="max-width:100%; height:auto;">
+<br>
+<br>
+ya identificado el archivo lo bamos a darle permisos con el comando 
+<h3>chmod +x install-nethunter-termux</h3>
+<img src="foto 6.png" alt="termux" style="max-width:100%; height:auto;">
+Despues empezamos la instalacion ejecutando 
+<h3>./install-nethunter-termux</h3>
+o la alternativa seria ejecutar
+<h3>bash install-nethunter-termux</h3>
+<img src="foto 7.png" alt="termux" style="max-width:100%; height:auto;">
+este comando te llevara a un menu donde te da a seleccionar que tipo de instalacion quieres realizar en este caso vamos a ejecutar 
+<h3>1</h3>
+<img src="foto 8.png" alt="termux" style="max-width:100%; height:auto;">
+y comenensara la instalacion aqui tendremos que esperar a que se complete la instalacion,al  finalizar nos preguntara que si queremos borrar los archivos de instalacion aqui con testaremos una "Y" y tecla de enter para borrarlos o "N" y tecla de enter para conservarlos(recomiendo que los borren para que no utilize tanto espacio en su dispositivo)
+<img src="foto 9.png" alt="termux" style="max-width:100%; height:auto;">
+<br>
+<br>
+ya en la banner de nethunter ejecutaremos
+<h3>nh</h3>
+este comando nos abrira una shell de nethunter
+<br>
+<img src="foto 10.png" alt="termux" style="max-width:100%; height:auto;">
+ya en la shell de nethunter ejecutaremos
+<h3>sudo su</h3>
+<img src="foto 11.png" alt="termux" style="max-width:100%; height:auto;">
+despues de ejecutar el anterior comando nos pedira una contraseña que por defecto siempre es "kali"no podras verlo que escribes por que esta encodeado pero ya ejecutandola contraseña tardara un poco pero al final nos cargara una shell de super usuario donde ejecutaremos
+<h3>sudo apt update</h3>
+<img src="foto 12.png" alt="termux" style="max-width:100%; height:auto;">
+<br>
+empezaran a cargar el proseso del comando y veremos que nos aparecera el siguiente error
+<img src="foto 13.png" alt="termux" style="max-width:100%; height:auto;">
+para resolver ese error ejecutaremos el siguiente comando
+<h3>sudo sed -i 's/non-free$/non-free non-free-firmware/' /etc/apt/sources.list</h3>
+<img src="foto 14.png" alt="termux" style="max-width:100%; height:auto;">
+ya ejecutado el anterior comando volveremos a ejecutar
+<br>
+<h3>sudo apt update</h3>
+<img src="foto 15.png" alt="termux" style="max-width:100%; height:auto;">
+y ahora cargara sin errores.
+<img src="foto 16.png" alt="termux" style="max-width:100%; height:auto;">
+ahora saldremos dandole 2 veces el mismo comando
+<h3>exit</h3> y <h3>exit</h3>
+<img src="foto 17.png" alt="termux" style="max-width:100%; height:auto;">
+hasta que estemos fuera de nethunter y nos de la shell de termux nuevamente,ya en la shell de termux ejecutaremos 
+<h3>pkg install termux-x11-nightly -y</h3>
+<img src="foto 18.png" alt="termux" style="max-width:100%; height:auto;">
+ya finalizada la instalacion de ese paquete ejecutaremos el siguiente con el comando
+<h3>pkg install termux-x11-repo -y</h3>
+<img src="foto 19.png" alt="termux" style="max-width:100%; height:auto;">
+ya finalisada la instalacion de ambos paquetes ahora ejecutaremos
+<h3>nano ~/ .termux/termux.properties</h3>
+con este comando editaremos el archivos de termux para poder preceder con la configuracion en termux:X11,ya ejecutado el comando con las flechas de termux nos desplazaresmo a abajo  y borraremos el numeral asi como se muestra en la siguiente imagen
+<img src="foto 20.png" alt="termux" style="max-width:100%; height:auto;">
+<img src="foto 21.png" alt="termux" style="max-width:100%; height:auto;">
+ya completado el anterior proseso ahora ejecutaremos el comando
+<h3>nano $PREFIX/bin/nh</h3>
+y nos desplazaremos abajo hasta donde dice 
+"-r kali-arm64 \"y abajo de esa opcion agrgaremos el siguiente codigo asi como se muestra en la siguiente imagen
+<img src="foto 22.png" alt="termux" style="max-width:100%; height:auto;">
+<img src="foto 23.png" alt="termux" style="max-width:100%; height:auto;">
+<h3>-b /data/data/com.termux/files/usr/tmp:/tmp \</h3>
+<img src="foto 24.png" alt="termux" style="max-width:100%; height:auto;">
+ya editado el el anterior archivo levantaremos un servidor con el comando
+<h3>termux-x11 :1</h3>
+<img src="foto 25.png" alt="termux" style="max-width:100%; height:auto;">
+ya levantado el servidor abriremos una nueva sesión ya en la nueva sesión ingresaremos anethunter con el comando
+<img src="foto 26.png" alt="termux" style="max-width:100%; height:auto;">
+<img src="foto 27.png" alt="termux" style="max-width:100%; height:auto;">
+<img src="foto 28.png" alt="termux" style="max-width:100%; height:auto;">
+<h3>nh</h3>
+ya en nethunter ejecutaremos los siguientes comandos
+<h3>export DISPLAY=:1</h3> este comando exportara el dispaly para poder usar kali linux en termu:X11
+<img src="foto 29.png" alt="termux" style="max-width:100%; height:auto;">
+<h3>sudo apt install dbus-x11</h3>
+este comando instalara el paquete dbus-x11 en nethunter y haci poder levantar una sessión en kali linux
+<img src="foto 30.png" alt="termux" style="max-width:100%; height:auto;">
+<h3>dbus-launch xfce4-session</h3>
+con este comado al ejecutarlo empezara a correr una session en kali linux
+<img src="foto 31.png" alt="termux" style="max-width:100%; height:auto;">
+<img src="foto 32.png" alt="termux" style="max-width:100%; height:auto;">
+<br>
+ya que este corriendo la session solo salimos de termux y ingresamos a termux:X11 y listo ya tendrias corriendo kali linux en termux:X11
+<img src="fotokali.png" alt="termux" style="max-width:100%; height:auto;">
+  </body>
+</html>
+
